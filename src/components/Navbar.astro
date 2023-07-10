@@ -1,0 +1,55 @@
+---
+import LogoBlack from "/logo_black.svg";
+---
+
+<nav>
+	<div>
+		<img src={LogoBlack} />
+		<ul>
+			<li><a href="#">O nas</a></li>
+			<li><a href="#">Koncerty</a></li>
+			<li><a href="#">Oferta</a></li>
+			<li><a href="#">Kontakt</a></li>
+		</ul>
+	</div>
+</nav>
+
+<style>
+	nav {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 6rem;
+		align-items: center;
+		height: 80px;
+		position: fixed;
+		top: 0;
+		width: 1024px;
+	}
+
+	nav div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	nav img {
+		height: 50px;
+	}
+
+	nav ul {
+		display: flex;
+		list-style: none;
+	}
+
+	nav ul li {
+		margin-left: 20px;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: var(--main-text);
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+</style>
