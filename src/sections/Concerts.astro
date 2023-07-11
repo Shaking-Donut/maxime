@@ -22,21 +22,32 @@ import Button from "../components/Button.astro";
 
 						<Button title="Czytaj więcej" type="secondary" />
 					</div>
-					<div class="image big">
-						<img src="https://picsum.photos/seed/picsum/500/200" />
-					</div>
-					<div class="image">
-						<img src="https://picsum.photos/seed/picsum/500/200" />
-					</div>
-					<div class="image big">
-						<img src="https://picsum.photos/seed/picsum/500/200" />
-					</div>
-					<div class="image">
-						<img src="https://picsum.photos/seed/picsum/500/200" />
-					</div>
+					<div class="image big"></div>
+					<div class="image"></div>
+					<div class="image big"></div>
+					<div class="image"></div>
 				</div>
 			</div>
-			<div class="carousel__item">2</div>
+			<div class="carousel__item">
+				<div class="item__content">
+					<div class="content">
+						<h3>Jakiś ładny tytuł</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Assumenda, animi labore dicta quaerat esse itaque quis in
+							repellendus natus, quisquam officiis totam eaque ea quod magnam?
+							Possimus ducimus temporibus dolore. Maiores ratione iusto cumque
+							culpa. Quod, consequatur amet nam enim
+						</p>
+
+						<Button title="Czytaj więcej" type="secondary" />
+					</div>
+					<div class="image big"></div>
+					<div class="image"></div>
+					<div class="image big"></div>
+					<div class="image"></div>
+				</div>
+			</div>
 		</div>
 		<button class="button prev slick-arrow">
 			<img src={caretLeft} />
@@ -114,6 +125,7 @@ import Button from "../components/Button.astro";
 	.image {
 		width: 100%;
 		height: 100%;
+		background-color: #232323;
 	}
 
 	.big {
