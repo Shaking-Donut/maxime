@@ -1,0 +1,152 @@
+---
+import caretLeft from "/caret_left.svg";
+import caretRight from "/caret_right.svg";
+import Button from "../components/Button.astro";
+---
+
+<section>
+	<h1>Gdzie można nas spotkać?</h1>
+	<div class="wrapper">
+		<div class="carousel">
+			<div class="carousel__item">
+				<div class="item__content">
+					<div class="content">
+						<h3>Jakiś ładny tytuł</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Assumenda, animi labore dicta quaerat esse itaque quis in
+							repellendus natus, quisquam officiis totam eaque ea quod magnam?
+							Possimus ducimus temporibus dolore. Maiores ratione iusto cumque
+							culpa. Quod, consequatur amet nam enim
+						</p>
+
+						<Button title="Czytaj więcej" type="secondary" />
+					</div>
+					<div class="image big">
+						<img src="https://picsum.photos/seed/picsum/500/200" />
+					</div>
+					<div class="image">
+						<img src="https://picsum.photos/seed/picsum/500/200" />
+					</div>
+					<div class="image big">
+						<img src="https://picsum.photos/seed/picsum/500/200" />
+					</div>
+					<div class="image">
+						<img src="https://picsum.photos/seed/picsum/500/200" />
+					</div>
+				</div>
+			</div>
+			<div class="carousel__item">2</div>
+		</div>
+		<button class="button prev slick-arrow">
+			<img src={caretLeft} />
+		</button>
+		<button class="button next slick-arrow">
+			<img src={caretRight} />
+		</button>
+	</div>
+</section>
+
+<script>
+	const buttonPrev = document.querySelector(".prev");
+	const buttonNext = document.querySelector(".next");
+
+	$(document).ready(function () {
+		$(".carousel").slick({
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			autoplay: true,
+			autoplaySpeed: 8000,
+			arrows: true,
+			prevArrow: buttonPrev,
+			nextArrow: buttonNext,
+			pauseOnHover: true
+		});
+	});
+</script>
+
+<style>
+	section {
+		margin-top: 5rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	p {
+		color: var(--sub-text);
+		font-size: 1.25rem;
+		line-height: 2;
+		letter-spacing: 0.5px;
+		margin-bottom: auto;
+	}
+
+	h1 {
+		font-family: "Oxygen", sans-serif;
+		font-size: 4rem;
+		margin-top: 0;
+		grid-column: span 2;
+	}
+
+	.carousel {
+		aspect-ratio: 16/9;
+	}
+
+	.item__content {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 200px);
+	}
+
+	.content {
+		grid-row: 1 / -1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.big {
+		grid-row: span 2;
+	}
+
+	.image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.button {
+		cursor: pointer;
+		background: none;
+		border: none;
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.next {
+		right: 0;
+		transform: translateX(100%);
+	}
+
+	.prev {
+		left: 0;
+		transform: translateX(-100%);
+	}
+
+	.wrapper {
+		position: relative;
+	}
+</style>

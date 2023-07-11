@@ -14,22 +14,44 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<script
+			src="https://code.jquery.com/jquery-3.7.0.min.js"
+			integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+			crossorigin="anonymous"></script>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+		/>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+		/>
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
+		<script
+			type="text/javascript"
+			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
 	</body>
 </html>
 <style is:global>
-	@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@600&Roboto:wght@100;400;700&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400&Roboto:wght@100;400;700&display=swap");
 	:root {
 		--accent: #d6a152;
 		--main-text: #0f0f0f;
 		--sub-text: #3d3d3d;
+		--main-bg: #f6f6f6;
 	}
 	html {
 		font-family: "Roboto", sans-serif;
-		background-color: #f6f6f6;
+		background-color: var(--main-bg);
+		color: var(--main-text);
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -38,5 +60,8 @@ const { title } = Astro.props;
 	body {
 		max-width: 1024px;
 		margin: 0 auto;
+	}
+	.slick-arrow::before {
+		color: var(--main-text);
 	}
 </style>
