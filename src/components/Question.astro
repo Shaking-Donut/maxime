@@ -1,0 +1,103 @@
+---
+export interface Props {
+	title: string;
+	content: string;
+}
+
+const { title, content } = Astro.props;
+---
+
+<div class="question">
+	<div class="header">
+		<h3>{title}</h3>
+		<div class="icon__wrapper">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="63"
+				height="63"
+				viewBox="0 0 63 63"
+				fill="none"
+			>
+				<path
+					d="M13.125 31.5H31.5M31.5 31.5H49.875M31.5"
+					stroke="black"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+				<path
+					d="M31.5 13.125V31.5M31.5 31.5V49.875M31.5 31.5V13.125"
+					stroke="black"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</svg>
+		</div>
+	</div>
+	<div class="content">
+		{content}
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos voluptate enim
+		iusto atque. Tempora dolores repudiandae, ipsam sit totam molestias placeat illo
+		temporibus, quo suscipit natus voluptatum cumque iste beatae. Accusamus a, quibusdam
+		obcaecati omnis id et quia fugiat consequuntur culpa ea fugit provident. Quos
+		voluptatem facere blanditiis pariatur quaerat ipsa numquam alias soluta repellendus,
+		fuga dolorum earum impedit est.
+	</div>
+</div>
+
+<style>
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	.question {
+		padding-block: 2rem;
+		padding-inline: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 2px solid #0f0f0f;
+		cursor: pointer;
+	}
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	svg {
+		scale: 0.8;
+	}
+
+	.content {
+		display: none;
+
+		color: var(--sub-text);
+		font-size: 1.25rem;
+		line-height: 2;
+		letter-spacing: 0.5px;
+	}
+
+	.content.active {
+		display: block;
+	}
+</style>
+
+<script>
+	const allQuestions = document.querySelectorAll(".question");
+
+	allQuestions.forEach((question) => {
+		question.addEventListener("click", () => {
+			question.children[1].classList.toggle("active");
+
+			const plusStroke =
+				question.children[0].children[1].children[0].children[1].attributes[1];
+
+			if (plusStroke.value === "black") {
+				plusStroke.value = "transparent";
+			} else {
+				plusStroke.value = "black";
+			}
+		});
+	});
+</script>

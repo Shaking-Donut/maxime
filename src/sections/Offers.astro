@@ -1,0 +1,94 @@
+<section>
+	<h1>Co oferujemy?</h1>
+	<div class="image"></div>
+	<div class="desc">
+		<h3>Koncerty</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos nam
+			reprehenderit culpa porro magnam vero eius pariatur commodi aliquid,
+			veniam architecto odit, ex placeat quibusdam ipsam sint. Laboriosam,
+			quaerat. Explicabo recusandae natus nesciunt quisquam modi praesentium
+			sed, aspernatur et ad? Ipsam ea quam exercitationem nesciunt doloremque
+			aperiam ut molestiae explicabo, laborum fugiat repellendus necessitatibus
+			fuga corporis pariatur sapiente dolorum.
+		</p>
+	</div>
+
+	<div class="desc">
+		<h3>Koncerty</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos nam
+			reprehenderit culpa porro magnam vero eius pariatur commodi aliquid,
+			veniam architecto odit, ex placeat quibusdam ipsam sint. Laboriosam,
+			quaerat. Explicabo recusandae natus nesciunt quisquam modi praesentium
+			sed, aspernatur et ad? Ipsam ea quam exercitationem nesciunt doloremque
+			aperiam ut molestiae explicabo, laborum fugiat repellendus necessitatibus
+			fuga corporis pariatur sapiente dolorum.
+		</p>
+	</div>
+	<div class="image"></div>
+
+	<div class="image"></div>
+	<div class="desc">
+		<h3>Koncerty</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos nam
+			reprehenderit culpa porro magnam vero eius pariatur commodi aliquid,
+			veniam architecto odit, ex placeat quibusdam ipsam sint. Laboriosam,
+			quaerat. Explicabo recusandae natus nesciunt quisquam modi praesentium
+			sed, aspernatur et ad? Ipsam ea quam exercitationem nesciunt doloremque
+			aperiam ut molestiae explicabo, laborum fugiat repellendus necessitatibus
+			fuga corporis pariatur sapiente dolorum.
+		</p>
+	</div>
+</section>
+
+<style>
+	section {
+		position: relative;
+		margin-top: 5rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		padding-block: 3rem;
+	}
+
+	section::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100vw;
+		height: 100%;
+		background-color: #eee;
+		z-index: -1;
+	}
+
+	h1 {
+		grid-column: 1 / -1;
+		font-family: "Oxygen", sans-serif;
+		font-size: 4rem;
+		margin-top: 0;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-color: #232323;
+	}
+
+	p {
+		color: var(--sub-text);
+		font-size: 1.25rem;
+		line-height: 2;
+		letter-spacing: 0.5px;
+	}
+</style>
