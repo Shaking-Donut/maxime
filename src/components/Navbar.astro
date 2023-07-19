@@ -24,8 +24,20 @@ import LogoBlack from "/logo_black.svg";
 		position: fixed;
 		top: 0;
 		width: 1024px;
-		background-color: var(--main-bg);
 		z-index: 2;
+	}
+
+	nav::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 100vw;
+		height: 80px;
+		background-color: var(--main-bg);
+		z-index: -1;
+		transform: translateX(-50%);
+		/* transform-origin: center; */
 	}
 
 	nav div {
