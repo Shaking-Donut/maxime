@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro";
 import LogoBlack from "/logo_black.svg";
 ---
 
@@ -6,18 +7,19 @@ import LogoBlack from "/logo_black.svg";
 	<div>
 		<img src={LogoBlack} />
 		<ul>
-			<li><a href="#">O nas</a></li>
-			<li><a href="#">Koncerty</a></li>
-			<li><a href="#">Oferta</a></li>
-			<li><a href="#">Kontakt</a></li>
+			<li><a href="#AboutUs">O nas</a></li>
+			<li><a href="#Concerts">Koncerty</a></li>
+			<li><a href="#Offer">Oferta</a></li>
+			<li><a href="#Contact">Kontakt</a></li>
 		</ul>
 	</div>
+	<a href="#Contact" class="secondary">Dołącz do nas</a>
 </nav>
 
 <style>
 	nav {
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: 1fr 230px;
 		gap: 6rem;
 		align-items: center;
 		height: 80px;
@@ -53,6 +55,7 @@ import LogoBlack from "/logo_black.svg";
 	nav ul {
 		display: flex;
 		list-style: none;
+		margin-right: 50px;
 	}
 
 	nav ul li {
@@ -65,5 +68,25 @@ import LogoBlack from "/logo_black.svg";
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
+	}
+
+	.secondary {
+		border: 2px solid #0f0f0f;
+		border-radius: 2px;
+		background-color: transparent;
+		color: #0f0f0f;
+		font-size: 20px;
+		padding: 16px 32px;
+		transition: box-shadow 250ms ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+	}
+
+	.secondary:hover {
+		cursor: pointer;
+		border-color: #232323;
+		box-shadow: 0px 5px 5px 2px rgba(15, 15, 15, 0.1);
 	}
 </style>

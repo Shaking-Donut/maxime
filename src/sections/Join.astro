@@ -1,0 +1,53 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section>
+	<h1>Chcesz do nas dołączyć?</h1>
+	<div class="image"></div>
+	<div>
+		<p>
+			Zachęcamy wszystkich zainteresowanych dołączeniem do naszego
+			stowarzyszenia do kontaktu. Nie jesteś muzykiem, a zainteresowało cię to,
+			co robimy? Nic nie szkodzi! W Maxime znajdzie się miejsce dla każdego w
+			różnych działach naszego stowarzyszenia. Będziesz mógł pracować w dziale
+			organizacji współprac, dołączyć do social mediów czy wesprzeć nas w
+			sprawach administracyjnych!
+		</p>
+		<br />
+		<Button type="secondary" title="Dołącz do nas!" isMaxWidth />
+	</div>
+</section>
+
+<style>
+	section {
+		position: relative;
+		margin-top: 5rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		padding-block: 3rem;
+	}
+
+	h1 {
+		grid-column: 1 / -1;
+		font-family: "Oxygen", sans-serif;
+		font-size: 4rem;
+		margin-top: 0;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-color: #232323;
+	}
+
+	p {
+		color: var(--sub-text);
+		font-size: 1.25rem;
+		line-height: 2;
+		letter-spacing: 0.5px;
+	}
+</style>

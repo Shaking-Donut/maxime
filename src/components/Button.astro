@@ -6,12 +6,21 @@ import arrowIconBlack from "/arrow_black.svg";
 export interface Props {
 	title: string;
 	type: "primary" | "secondary" | "fancy";
+	isArrow?: boolean;
+	isMaxWidth?: boolean;
 }
 
-const { title, type } = Astro.props;
+const { title, type, isArrow, isMaxWidth } = Astro.props;
 
 let arrowType;
 let buttonContent;
+let maxWidth;
+
+if (isMaxWidth) {
+	maxWidth = " max-width";
+} else {
+	maxWidth = "";
+}
 
 switch (type) {
 	case "primary":
@@ -32,7 +41,7 @@ switch (type) {
 }
 ---
 
-<button id="button" class={type}>
+<button id="button" class={type + maxWidth}>
 	{
 		type == "fancy" ? (
 			<>
@@ -46,7 +55,7 @@ switch (type) {
 			buttonContent
 		)
 	}
-	<img src={arrowType} />
+	{isArrow ? null : <img src={arrowType} />}
 </button>
 
 <style>
@@ -128,6 +137,10 @@ switch (type) {
 
 	.fancy:hover .circle {
 		box-shadow: 0px 5px 5px 2px rgba(15, 15, 15, 0.1);
+	}
+
+	.max-width {
+		width: 100%;
 	}
 </style>
 

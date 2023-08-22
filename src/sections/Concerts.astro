@@ -20,7 +20,7 @@ import Button from "../components/Button.astro";
 							culpa. Quod, consequatur amet nam enim
 						</p>
 
-						<Button title="Czytaj więcej" type="secondary" />
+						<!-- <Button title="Czytaj więcej" type="secondary" /> -->
 					</div>
 					<div class="image big"></div>
 					<div class="image"></div>
@@ -40,7 +40,7 @@ import Button from "../components/Button.astro";
 							culpa. Quod, consequatur amet nam enim
 						</p>
 
-						<Button title="Czytaj więcej" type="secondary" />
+						<!-- <Button title="Czytaj więcej" type="secondary" /> -->
 					</div>
 					<div class="image big"></div>
 					<div class="image"></div>
@@ -73,7 +73,8 @@ import Button from "../components/Button.astro";
 			arrows: true,
 			prevArrow: buttonPrev,
 			nextArrow: buttonNext,
-			pauseOnHover: true
+			pauseOnHover: true,
+			adaptiveHeight: true
 		});
 	});
 </script>
@@ -120,6 +121,7 @@ import Button from "../components/Button.astro";
 		grid-row: 1 / -1;
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 	}
 
 	.image {

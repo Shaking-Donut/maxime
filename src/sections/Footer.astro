@@ -1,0 +1,22 @@
+<footer>&copy; Kacper Siembab 2023r</footer>
+
+<style>
+	footer {
+		position: relative;
+		color: #fff;
+		padding: 20px;
+		text-align: center;
+	}
+
+	footer::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100vw;
+		height: 100%;
+		background-color: #232323;
+		z-index: -1;
+	}
+</style>
